@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facility Gallery — BEAST Fitness Hub</title>
+    <meta name="description" content="Tour the training floor and equipment at BEAST Fitness Hub Bangalore. Real photos of our strength and cardio facilities.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Facility Gallery — BEAST Fitness Hub">
+    <meta property="og:description" content="Step inside BEAST Fitness Hub. World-class strength equipment and premium training space.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon (SVG) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 4L38 12L42 22L36 34L24 44L12 34L6 22L10 12L24 4Z' stroke='%23E10600' stroke-width='3' stroke-linejoin='round' fill='%23141416'/%3E%3Cpath d='M24 4V24M24 24L34 16M24 24L14 16M24 24L24 38M24 28L30 33M24 28L18 33' stroke='%23E10600' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --red-primary: #E10600;
+            --red-hover: #B71C1C;
+            --red-tint: #FF4B3E;
+            --red-glow: rgba(225, 6, 0, 0.28);
+            --red-subtle: rgba(225, 6, 0, 0.08);
+
+            --bg-dark-base: #141416;
+            --bg-dark-elevated: #1C1C1F;
+            --bg-dark-card: #222226;
+            --text-light-high: #F6F4F1;
+            --text-light-med: #C5C2BC;
+            --text-light-muted: #8E8A83;
+            --border-dark: rgba(255, 255, 255, 0.08);
+
+            --bg-light-base: #F6F4F1;
+            --text-dark-high: #141416;
+            --text-dark-med: #4A4A4F;
+            --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+            --font-display: 'Barlow Condensed', sans-serif;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --radius-full: 9999px;
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark-base);
+            color: var(--text-light-high);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            font-weight: 800;
+        }
+
+        .text-red {
+            color: var(--red-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Nav */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(20, 20, 22, 0.94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-dark);
+            padding: 0.9rem 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-light-high);
+        }
+
+        .logo-svg {
+            width: 38px;
+            height: 38px;
+        }
+
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-main {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            color: #FFFFFF;
+        }
+
+        .logo-divider-line {
+            width: 100%;
+            height: 1.5px;
+            background: var(--red-primary);
+            margin: 2px 0 3px;
+        }
+
+        .logo-sub {
+            font-family: var(--font-body);
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 0.26em;
+            color: var(--text-light-med);
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: none;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-light-med);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: #FFFFFF;
+        }
+
+        @media (min-width: 860px) {
+            .nav-menu { display: flex; }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.6rem;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: var(--transition);
+            line-height: 1;
+        }
+
+        .btn-primary {
+            background-color: var(--red-primary);
+            color: #FFFFFF;
+            box-shadow: 0 4px 14px var(--red-glow);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--red-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Header */
+        .page-header {
+            padding: 9rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(225, 6, 0, 0.1) 0%, var(--bg-dark-base) 100%);
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-light-med);
+            font-size: 1.05rem;
+        }
+
+        .title-accent-line {
+            width: 48px;
+            height: 3px;
+            background: var(--red-primary);
+            margin: 1rem auto;
+            border-radius: var(--radius-full);
+        }
+
+        /* Gallery Grid */
+        .gallery-wrap {
+            padding: 4.5rem 0 6rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .gallery-card {
+            background: var(--bg-dark-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(225, 6, 0, 0.5);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(225, 6, 0, 0.15);
+        }
+
+        .gallery-img-box {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .gallery-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover .gallery-img-box img {
+            transform: scale(1.06);
+        }
+
+        .gallery-info {
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gallery-info h3 {
+            font-size: 1.15rem;
+            color: #FFFFFF;
+        }
+
+        .gallery-info span {
+            font-size: 0.8rem;
+            color: var(--red-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Lightbox */
+        .lightbox-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(14, 14, 16, 0.96);
+            backdrop-filter: blur(12px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .lightbox-modal.open {
+            display: flex;
+        }
+
+        .lightbox-container {
+            position: relative;
+            max-width: 92vw;
+            max-height: 88vh;
+        }
+
+        .lightbox-container img {
+            max-width: 100%;
+            max-height: 82vh;
+            border-radius: var(--radius-md);
+            object-fit: contain;
+        }
+
+        .lightbox-close-btn {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            background: transparent;
+            border: none;
+            color: #FFFFFF;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .lightbox-close-btn:hover { color: var(--red-primary); }
+
+        .lightbox-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(225, 6, 0, 0.3);
+            border: 1px solid rgba(225, 6, 0, 0.5);
+            color: #FFFFFF;
+            width: 46px;
+            height: 46px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .lightbox-arrow.prev { left: -60px; }
+        .lightbox-arrow.next { right: -60px; }
+
+        @media (max-width: 768px) {
+            .lightbox-arrow.prev { left: 10px; }
+            .lightbox-arrow.next { right: 10px; }
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #0E0E10;
+            border-top: 1px solid var(--border-dark);
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-light-muted);
+            font-size: 0.88rem;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            list-style: none;
+        }
+
+        .footer-nav a {
+            color: var(--text-light-med);
+            text-decoration: none;
+        }
+
+        .footer-nav a:hover { color: var(--red-primary); }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="site-nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand-logo">
+                <svg class="logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 4L39 12L43 23L37 35L24 44L11 35L5 23L9 12L24 4Z" stroke="#E10600" stroke-width="2.5" stroke-linejoin="round" fill="rgba(225,6,0,0.12)"/>
+                    <path d="M24 4V23M24 23L35 15M24 23L13 15M24 23L24 37M24 28L31 33M24 28L17 33" stroke="#E10600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="logo-text-group">
+                    <span class="logo-main">BEAST</span>
+                    <span class="logo-divider-line"></span>
+                    <span class="logo-sub">FITNESS HUB</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#training">Training</a></li>
+                <li><a href="index.html#pricing">Membership</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="book.html" class="btn btn-primary">Book Free Slot</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <span style="font-size:0.85rem; font-weight:700; color:var(--red-primary); letter-spacing:0.15em; text-transform:uppercase;">Visual Tour</span>
+            <h1>FACILITY GALLERY</h1>
+            <div class="title-accent-line"></div>
+            <p>A look at the dedicated strength stations, free weight areas, and conditioning equipment at BEAST Fitness Hub.</p>
+        </div>
+    </header>
+
+    <!-- Gallery Grid -->
+    <main class="gallery-wrap">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-card" onclick="openLightbox(0)">
+                    <div class="gallery-img-box">
+                        <img src="imgs/WhatsApp Image 2026-10-05 at 12.35.42 AM.jpeg" alt="BEAST Fitness Hub Main Floor">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Main Gym Floor</h3>
+                        <span>View Photo →</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card" onclick="openLightbox(1)">
+                    <div class="gallery-img-box">
+                        <img src="imgs/WhatsApp Image 2026-10-05 at 12.35.43 AM.jpeg" alt="Dumbbell & Free Weight Rack">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Free Weight Deck</h3>
+                        <span>View Photo →</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card" onclick="openLightbox(2)">
+                    <div class="gallery-img-box">
+                        <img src="imgs/WhatsApp Image 2026-10-05 at 12.35.43 AM (1).jpeg" alt="Selectorized Strength Equipment">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Strength Machines</h3>
+                        <span>View Photo →</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card" onclick="openLightbox(3)">
+                    <div class="gallery-img-box">
+                        <img src="imgs/WhatsApp Image 2026-10-05 at 12.35.43 AM (2).jpeg" alt="Power & Squat Platform">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Power Stations</h3>
+                        <span>View Photo →</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card" onclick="openLightbox(4)">
+                    <div class="gallery-img-box">
+                        <img src="imgs/WhatsApp Image 2026-10-05 at 12.35.43 AM (3).jpeg" alt="Conditioning Training Area">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Cardio & Workout Deck</h3>
+                        <span>View Photo →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
+        <div class="lightbox-container">
+            <button class="lightbox-close-btn" onclick="closeLightbox(event)">×</button>
+            <img src="" alt="Enlarged Gym View" id="lightboxImg">
+            <button class="lightbox-arrow prev" onclick="event.stopPropagation(); changeLightboxImage(-1)">❮</button>
+            <button class="lightbox-arrow next" onclick="event.stopPropagation(); changeLightboxImage(1)">❯</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="font-family:var(--font-display); font-size:1.6rem; font-weight:800; color:#FFF;">BEAST FITNESS HUB</div>
+            <ul class="footer-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="book.html">Book Slot</a></li>
+            </ul>
+            <p>© 2026 BEAST Fitness Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const galleryImages = [
+            'imgs/WhatsApp Image 2026-10-05 at 12.35.42 AM.jpeg',
+            'imgs/WhatsApp Image 2026-10-05 at 12.35.43 AM.jpeg',
+            'imgs/WhatsApp Image 2026-10-05 at 12.35.43 AM (1).jpeg',
+            'imgs/WhatsApp Image 2026-10-05 at 12.35.43 AM (2).jpeg',
+            'imgs/WhatsApp Image 2026-10-05 at 12.35.43 AM (3).jpeg'
+        ];
+        let currentImgIdx = 0;
+        const lightboxModal = document.getElementById('lightboxModal');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        function openLightbox(idx) {
+            currentImgIdx = idx;
+            lightboxImg.src = galleryImages[currentImgIdx];
+            lightboxModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event && event.target !== event.currentTarget && !event.target.classList.contains('lightbox-close-btn')) return;
+            lightboxModal.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeLightboxImage(dir) {
+            currentImgIdx = (currentImgIdx + dir + galleryImages.length) % galleryImages.length;
+            lightboxImg.src = galleryImages[currentImgIdx];
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightboxModal.classList.contains('open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') changeLightboxImage(-1);
+            if (e.key === 'ArrowRight') changeLightboxImage(1);
+        });
+    </script>
+</body>
+</html>

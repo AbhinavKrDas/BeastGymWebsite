@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Free Slot — BEAST Fitness Hub</title>
+    <meta name="description" content="Book a free trial workout session and facility tour at BEAST Fitness Hub Bangalore. Experience our equipment and coaching.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Book Your Free Slot — BEAST Fitness Hub">
+    <meta property="og:description" content="Experience BEAST Fitness Hub with a complimentary trial pass.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon (SVG) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 4L38 12L42 22L36 34L24 44L12 34L6 22L10 12L24 4Z' stroke='%23E10600' stroke-width='3' stroke-linejoin='round' fill='%23141416'/%3E%3Cpath d='M24 4V24M24 24L34 16M24 24L14 16M24 24L24 38M24 28L30 33M24 28L18 33' stroke='%23E10600' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --red-primary: #E10600;
+            --red-hover: #B71C1C;
+            --red-tint: #FF4B3E;
+            --red-glow: rgba(225, 6, 0, 0.28);
+            --red-subtle: rgba(225, 6, 0, 0.08);
+
+            --bg-dark-base: #141416;
+            --bg-dark-elevated: #1C1C1F;
+            --bg-dark-card: #222226;
+            --text-light-high: #F6F4F1;
+            --text-light-med: #C5C2BC;
+            --text-light-muted: #8E8A83;
+            --border-dark: rgba(255, 255, 255, 0.08);
+
+            --bg-light-base: #F6F4F1;
+            --text-dark-high: #141416;
+            --text-dark-med: #4A4A4F;
+            --border-light: rgba(20, 20, 22, 0.08);
+            --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+            --font-display: 'Barlow Condensed', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --radius-full: 9999px;
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark-base);
+            color: var(--text-light-high);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            font-weight: 800;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Nav */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(20, 20, 22, 0.94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-dark);
+            padding: 0.9rem 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-light-high);
+        }
+
+        .logo-svg { width: 38px; height: 38px; }
+
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-main {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            color: #FFFFFF;
+        }
+
+        .logo-divider-line {
+            width: 100%;
+            height: 1.5px;
+            background: var(--red-primary);
+            margin: 2px 0 3px;
+        }
+
+        .logo-sub {
+            font-family: var(--font-body);
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 0.26em;
+            color: var(--text-light-med);
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: none;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-light-med);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active { color: #FFFFFF; }
+
+        @media (min-width: 860px) {
+            .nav-menu { display: flex; }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.8rem;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .btn-primary {
+            background-color: var(--red-primary);
+            color: #FFFFFF;
+            border-color: var(--red-primary);
+            box-shadow: 0 4px 14px var(--red-glow);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--red-hover);
+            border-color: var(--red-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Header */
+        .page-header {
+            padding: 9rem 0 3.5rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(225, 6, 0, 0.1) 0%, var(--bg-dark-base) 100%);
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-light-med);
+            font-size: 1.05rem;
+        }
+
+        .title-accent-line {
+            width: 48px;
+            height: 3px;
+            background: var(--red-primary);
+            margin: 1rem auto;
+            border-radius: var(--radius-full);
+        }
+
+        /* Booking Section (Light Rhythm) */
+        .booking-wrap {
+            padding: 4.5rem 0 6rem;
+            background-color: var(--bg-light-base);
+            color: var(--text-dark-high);
+        }
+
+        .booking-box {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .perks-strip {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (min-width: 600px) {
+            .perks-strip {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .perk-pill {
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1rem 0.75rem;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+        }
+
+        .perk-pill svg {
+            width: 24px;
+            height: 24px;
+            color: var(--red-primary);
+            margin-bottom: 0.35rem;
+        }
+
+        .perk-pill span {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-dark-high);
+        }
+
+        .booking-form-card {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-light);
+        }
+
+        .form-section-title {
+            font-size: 1.25rem;
+            color: var(--text-dark-high);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(225, 6, 0, 0.2);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (min-width: 550px) {
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-dark-high);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .form-group label .req { color: var(--red-primary); }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1.5px solid var(--border-light);
+            border-radius: var(--radius-md);
+            background: #FAFAFA;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--text-dark-high);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--red-primary);
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.12);
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .checkbox-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+            color: var(--text-dark-med);
+        }
+
+        .checkbox-row input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--red-primary);
+        }
+
+        .success-box {
+            display: none;
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .success-box.active {
+            display: block;
+        }
+
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: var(--radius-full);
+            background: rgba(225, 6, 0, 0.12);
+            color: var(--red-primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .success-box h3 {
+            font-size: 2rem;
+            color: var(--text-dark-high);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #0E0E10;
+            border-top: 1px solid var(--border-dark);
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-light-muted);
+            font-size: 0.88rem;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            list-style: none;
+        }
+
+        .footer-nav a {
+            color: var(--text-light-med);
+            text-decoration: none;
+        }
+
+        .footer-nav a:hover { color: var(--red-primary); }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="site-nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand-logo">
+                <svg class="logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 4L39 12L43 23L37 35L24 44L11 35L5 23L9 12L24 4Z" stroke="#E10600" stroke-width="2.5" stroke-linejoin="round" fill="rgba(225,6,0,0.12)"/>
+                    <path d="M24 4V23M24 23L35 15M24 23L13 15M24 23L24 37M24 28L31 33M24 28L17 33" stroke="#E10600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="logo-text-group">
+                    <span class="logo-main">BEAST</span>
+                    <span class="logo-divider-line"></span>
+                    <span class="logo-sub">FITNESS HUB</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#pricing">Membership</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="book.html" class="btn btn-primary">Book Free Slot</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <span style="font-size:0.85rem; font-weight:700; color:var(--red-primary); letter-spacing:0.15em; text-transform:uppercase;">Experience The Hub</span>
+            <h1>BOOK YOUR TRIAL PASS</h1>
+            <div class="title-accent-line"></div>
+            <p>Claim your complimentary 1-day workout session. Test our machines and get an orientation with a coach.</p>
+        </div>
+    </header>
+
+    <!-- Booking Content (Light Rhythm) -->
+    <main class="booking-wrap">
+        <div class="container booking-box">
+            <div class="perks-strip">
+                <div class="perk-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    <span>100% Free</span>
+                </div>
+                <div class="perk-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    <span>No Lock-In</span>
+                </div>
+                <div class="perk-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    <span>Coach Tour</span>
+                </div>
+                <div class="perk-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <span>Full Access</span>
+                </div>
+            </div>
+
+            <div class="booking-form-card">
+                <form id="slotForm">
+                    <div class="form-section-title">1. CONTACT DETAILS</div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name <span class="req">*</span></label>
+                            <input type="text" name="name" placeholder="e.g. Rahul Sharma" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number <span class="req">*</span></label>
+                            <input type="tel" name="phone" placeholder="e.g. +91 98765 43210" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section-title" style="margin-top: 2rem;">2. VISIT PREFERENCE</div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Preferred Date <span class="req">*</span></label>
+                            <input type="date" name="date" id="bookingDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Time Slot <span class="req">*</span></label>
+                            <select name="time" required>
+                                <option value="">Choose slot time</option>
+                                <option value="Morning (6 AM - 8 AM)">Morning (6:00 AM - 8:00 AM)</option>
+                                <option value="Mid-Morning (8 AM - 11 AM)">Mid-Morning (8:00 AM - 11:00 AM)</option>
+                                <option value="Afternoon (11 AM - 4 PM)">Afternoon (11:00 AM - 4:00 PM)</option>
+                                <option value="Evening (4 PM - 7 PM)">Evening (4:00 PM - 7:00 PM)</option>
+                                <option value="Night (7 PM - 10 PM)">Night (7:00 PM - 10:00 PM)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Membership Plan Of Interest</label>
+                        <select name="plan">
+                            <option value="Just taking a tour / exploring">Just taking a tour / exploring</option>
+                            <option value="1 Month (₹1,500)">1 Month Pass (₹1,500)</option>
+                            <option value="3 Months (₹3,000) - Best Value">3 Months Quarterly (₹3,000) — Best Value</option>
+                            <option value="12 Months (₹10,000) - Most Popular">12 Months Yearly (₹10,000) — Most Popular</option>
+                            <option value="Couple Offer (₹5,000 Yearly)">Couple Annual Offer (₹5,000)</option>
+                        </select>
+                    </div>
+
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="waUpdates" checked>
+                        <label for="waUpdates">Send slot confirmation via WhatsApp</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm My Free Trial Pass</button>
+                </form>
+
+                <div class="success-box" id="successBox">
+                    <div class="success-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Slot Request Received!</h3>
+                    <p style="color: var(--text-dark-med); margin-bottom: 1.5rem;">We have prepared your booking details. We are opening WhatsApp to instantly notify our gym reception.</p>
+                    <a href="index.html" class="btn btn-primary">Back To Home</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="font-family:var(--font-display); font-size:1.6rem; font-weight:800; color:#FFF;">BEAST FITNESS HUB</div>
+            <ul class="footer-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p>© 2026 BEAST Fitness Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set default minimum date
+        const datePicker = document.getElementById('bookingDate');
+        if (datePicker) {
+            datePicker.min = new Date().toISOString().split('T')[0];
+        }
+
+        // WhatsApp Form Submit
+        document.getElementById('slotForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const phone = formData.get('phone');
+            const date = formData.get('date');
+            const time = formData.get('time');
+            const plan = formData.get('plan');
+
+            const text = `*New Free Trial Booking - BEAST Fitness Hub*
+Name: ${name}
+Phone: ${phone}
+Date: ${date}
+Time Slot: ${time}
+Plan Interest: ${plan}`;
+
+            const phoneTarget = '[PHONE]';
+            const waUrl = `https://wa.me/${phoneTarget}?text=${encodeURIComponent(text)}`;
+
+            document.getElementById('slotForm').style.display = 'none';
+            document.getElementById('successBox').classList.add('active');
+
+            setTimeout(() => {
+                window.open(waUrl, '_blank');
+            }, 600);
+        });
+    </script>
+</body>
+</html>

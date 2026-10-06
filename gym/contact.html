@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Directions — BEAST Fitness Hub</title>
+    <meta name="description" content="Get in touch with BEAST Fitness Hub in Bangalore. Location coordinates, Google Maps directions, phone, and opening hours.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact & Directions — BEAST Fitness Hub">
+    <meta property="og:description" content="Visit BEAST Fitness Hub. Location, operating hours, and direct contact details.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon (SVG) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 4L38 12L42 22L36 34L24 44L12 34L6 22L10 12L24 4Z' stroke='%23E10600' stroke-width='3' stroke-linejoin='round' fill='%23141416'/%3E%3Cpath d='M24 4V24M24 24L34 16M24 24L14 16M24 24L24 38M24 28L30 33M24 28L18 33' stroke='%23E10600' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --red-primary: #E10600;
+            --red-hover: #B71C1C;
+            --red-tint: #FF4B3E;
+            --red-glow: rgba(225, 6, 0, 0.28);
+            --red-subtle: rgba(225, 6, 0, 0.08);
+
+            --bg-dark-base: #141416;
+            --bg-dark-elevated: #1C1C1F;
+            --bg-dark-card: #222226;
+            --text-light-high: #F6F4F1;
+            --text-light-med: #C5C2BC;
+            --text-light-muted: #8E8A83;
+            --border-dark: rgba(255, 255, 255, 0.08);
+
+            --bg-light-base: #F6F4F1;
+            --text-dark-high: #141416;
+            --text-dark-med: #4A4A4F;
+            --border-light: rgba(20, 20, 22, 0.08);
+            --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+            --font-display: 'Barlow Condensed', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --radius-full: 9999px;
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark-base);
+            color: var(--text-light-high);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            font-weight: 800;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Nav */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(20, 20, 22, 0.94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-dark);
+            padding: 0.9rem 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-light-high);
+        }
+
+        .logo-svg { width: 38px; height: 38px; }
+
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-main {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            color: #FFFFFF;
+        }
+
+        .logo-divider-line {
+            width: 100%;
+            height: 1.5px;
+            background: var(--red-primary);
+            margin: 2px 0 3px;
+        }
+
+        .logo-sub {
+            font-family: var(--font-body);
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 0.26em;
+            color: var(--text-light-med);
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: none;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-light-med);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active { color: #FFFFFF; }
+
+        @media (min-width: 860px) {
+            .nav-menu { display: flex; }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.6rem;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            line-height: 1;
+        }
+
+        .btn-primary {
+            background-color: var(--red-primary);
+            color: #FFFFFF;
+            border-color: var(--red-primary);
+            box-shadow: 0 4px 14px var(--red-glow);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--red-hover);
+            border-color: var(--red-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary-dark {
+            background: transparent;
+            color: #FFFFFF;
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .btn-secondary-dark:hover {
+            border-color: var(--red-primary);
+            color: var(--red-primary);
+            background: var(--red-subtle);
+        }
+
+        /* Header */
+        .page-header {
+            padding: 9rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(225, 6, 0, 0.1) 0%, var(--bg-dark-base) 100%);
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-light-med);
+            font-size: 1.05rem;
+        }
+
+        .title-accent-line {
+            width: 48px;
+            height: 3px;
+            background: var(--red-primary);
+            margin: 1rem auto;
+            border-radius: var(--radius-full);
+        }
+
+        /* Contact Section (Light Rhythm) */
+        .contact-wrap {
+            padding: 5rem 0 6rem;
+            background-color: var(--bg-light-base);
+            color: var(--text-dark-high);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 860px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-card {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-light);
+        }
+
+        .contact-card h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark-high);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .contact-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: var(--radius-md);
+            background: rgba(225, 6, 0, 0.1);
+            color: var(--red-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg { width: 22px; height: 22px; }
+
+        .contact-details h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark-high);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--text-dark-med);
+            font-size: 0.95rem;
+            text-decoration: none;
+            line-height: 1.5;
+        }
+
+        .contact-details a:hover { color: var(--red-primary); }
+
+        .action-buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .map-card {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-light);
+            min-height: 420px;
+        }
+
+        .map-card iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            border: none;
+            display: block;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #0E0E10;
+            border-top: 1px solid var(--border-dark);
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-light-muted);
+            font-size: 0.88rem;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            list-style: none;
+        }
+
+        .footer-nav a {
+            color: var(--text-light-med);
+            text-decoration: none;
+        }
+
+        .footer-nav a:hover { color: var(--red-primary); }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="site-nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand-logo">
+                <svg class="logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 4L39 12L43 23L37 35L24 44L11 35L5 23L9 12L24 4Z" stroke="#E10600" stroke-width="2.5" stroke-linejoin="round" fill="rgba(225,6,0,0.12)"/>
+                    <path d="M24 4V23M24 23L35 15M24 23L13 15M24 23L24 37M24 28L31 33M24 28L17 33" stroke="#E10600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="logo-text-group">
+                    <span class="logo-main">BEAST</span>
+                    <span class="logo-divider-line"></span>
+                    <span class="logo-sub">FITNESS HUB</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#pricing">Membership</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <a href="book.html" class="btn btn-primary">Book Free Slot</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <span style="font-size:0.85rem; font-weight:700; color:var(--red-primary); letter-spacing:0.15em; text-transform:uppercase;">Get In Touch</span>
+            <h1>VISIT & CONTACT</h1>
+            <div class="title-accent-line"></div>
+            <p>Connect with the BEAST Fitness Hub team, get directions, or check operating hours.</p>
+        </div>
+    </header>
+
+    <!-- Contact & Map (Light Rhythm) -->
+    <main class="contact-wrap">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h2>FACILITY DETAILS</h2>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Gym Location</h4>
+                            <p>[PLACEHOLDER: Full street address]<br>[PLACEHOLDER: Harohalli / Kanakapura Road area], Bangalore</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone Desk</h4>
+                            <p><a href="tel:[PHONE]">[PHONE]</a> (Call for immediate queries)</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Opening Hours</h4>
+                            <p><strong>Mon – Sat:</strong> [OPEN_TIME] – [CLOSE_TIME]<br><strong>Sunday:</strong> [OPEN_TIME] – [CLOSE_TIME]</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:[CONTACT_EMAIL]">[CONTACT_EMAIL]</a></p>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons-grid">
+                        <a href="https://wa.me/[PHONE]?text=Hi%20BEAST%20Fitness%20Hub%2C%20I%20have%20an%20inquiry" class="btn btn-primary" target="_blank">WhatsApp Desk</a>
+                        <a href="https://www.google.com/maps/place/BEAST+Fitness+Hub/@12.6491859,77.4384088,15z" class="btn btn-primary" target="_blank" style="background:#141416; border-color:#141416;">Maps Directions</a>
+                    </div>
+                </div>
+
+                <div class="map-card">
+                    <!-- Google Maps Embed using exact coordinates (12.6491859, 77.4384088) -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.2564898234447!2d77.4383923!3d12.6491859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae5b00315b7c83%3A0xe2244708fc77340c!2sBEAST%20Fitness%20Hub!5e0!3m2!1sen!2sin!4v1696512000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="BEAST Fitness Hub Map"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="font-family:var(--font-display); font-size:1.6rem; font-weight:800; color:#FFF;">BEAST FITNESS HUB</div>
+            <ul class="footer-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="book.html">Book Slot</a></li>
+            </ul>
+            <p>© 2026 BEAST Fitness Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
